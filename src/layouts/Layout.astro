@@ -1,10 +1,10 @@
 ---
 import { SEO } from "astro-seo";
 import Footer from "@components/footer.astro";
-import Navbar from "@components/navbar/navbar.astro";
 import "@fontsource-variable/inter/index.css";
+import "../styles/global.css";
 
-export interface Props {
+interface Props {
   title: string;
 }
 
@@ -30,9 +30,6 @@ const makeTitle = title
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <link rel="stylesheet" href="/global.css" />
-    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-
     <SEO
       title={makeTitle}
       description="Web de Rodrigo."
@@ -56,7 +53,6 @@ const makeTitle = title
     />
   </head>
   <body class="bg-custom-background">
-    <!-- <Navbar /> -->
     <slot />
     <Footer />
     <style is:global>

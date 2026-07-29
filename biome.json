@@ -1,0 +1,73 @@
+{
+	"$schema": "https://biomejs.dev/schemas/2.5.5/schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"includes": [
+			"**",
+			"!**/*.md",
+			"!**/*.mdx",
+			"!**/*.css",
+			"!**/*.astro",
+			"!**/*.svg",
+			"!**/dist",
+			"!**/.astro",
+			"!**/node_modules"
+		]
+	},
+	"formatter": {
+		"enabled": false
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "recommended",
+			"correctness": {
+				"noUnusedImports": "warn",
+				"noUnusedVariables": "warn",
+				"useExhaustiveDependencies": "off",
+				"noUndeclaredVariables": "off"
+			},
+			"suspicious": {
+				"noExplicitAny": "off",
+				"noAssignInExpressions": "off"
+			},
+			"style": {
+				"useConst": "warn",
+				"noNonNullAssertion": "off",
+				"useImportType": "off",
+				"noParameterAssign": "off"
+			},
+			"complexity": {
+				"noBannedTypes": "off",
+				"noForEach": "off"
+			},
+			"nursery": {}
+		}
+	},
+	"javascript": {
+		"globals": ["$$Generic"]
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.svelte", "**/*.svelte.ts", "**/*.svelte.js"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUnusedVariables": "off",
+						"noUnusedImports": "off"
+					},
+					"style": {
+						"useConst": "off"
+					},
+					"performance": {
+						"noAccumulatingSpread": "off"
+					}
+				}
+			}
+		}
+	]
+}
